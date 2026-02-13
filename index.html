@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Walkhub Support</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0f172a;color:white;overflow-x:hidden;scroll-behavior:smooth;}
+
+#particle-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+
+.loader{position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;display:flex;justify-content:center;align-items:center;z-index:9999;}
+.loader div{width:50px;height:50px;border:5px solid #3b82f6;border-top:5px solid #facc15;border-radius:50%;animation:spin 1s linear infinite;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+
+header{text-align:center;padding:100px 20px 40px 20px;position:relative;z-index:1;}
+
+#waveHeader{
+font-size:60px;
+font-weight:900;
+background:linear-gradient(270deg,#3b82f6,#facc15,#10b981,#f472b6,#3b82f6);
+-webkit-background-clip:text;
+color:transparent;
+display:inline-block;
+text-shadow:0 0 15px rgba(255,255,255,0.8);
+animation:gradientShift 5s ease infinite, rotate3D 4s ease-in-out infinite alternate;
+background-size:400% 400%;
+}
+
+@keyframes gradientShift{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+@keyframes rotate3D{
+0%{transform:rotateY(0deg) rotateX(0deg);}
+25%{transform:rotateY(5deg) rotateX(2deg);}
+50%{transform:rotateY(-5deg) rotateX(-3deg);}
+75%{transform:rotateY(4deg) rotateX(1deg);}
+100%{transform:rotateY(0deg) rotateX(0deg);}
+}
+
+#subText{font-size:22px;font-weight:500;color:#cbd5e1;margin-top:15px;}
+
+.container{width:90%;max-width:900px;margin:auto;padding-top:40px;position:relative;z-index:1;}
+
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:18px;
+margin-bottom:35px;
+box-shadow:0 0 25px rgba(0,0,0,0.5);
+opacity:0;
+transform:translateY(50px) rotateX(10deg);
+transition:all 0.8s cubic-bezier(.25,.8,.25,1);
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0) rotateX(0deg);
+}
+
+.card:hover{
+transform:scale(1.05) rotateY(3deg) rotateX(3deg);
+box-shadow:0 0 40px rgba(250,204,21,0.8),0 0 60px rgba(59,130,246,0.6);
+}
+
+h2{margin-bottom:18px;color:#facc15;font-size:24px;}
+
+.button{
+display:inline-block;
+padding:12px 25px;
+background:#3b82f6;
+color:white;
+text-decoration:none;
+border-radius:8px;
+margin:5px;
+animation:pulse 2s infinite;
+transition:0.3s, box-shadow 0.3s;
+}
+
+.button:hover{
+background:#facc15;
+color:#0f172a;
+transform:scale(1.05);
+box-shadow:0 0 25px rgba(250,204,21,0.9),0 0 40px rgba(59,130,246,0.8);
+}
+
+@keyframes pulse{
+0%,100%{box-shadow:0 0 10px rgba(59,130,246,0.5);}
+50%{box-shadow:0 0 30px rgba(250,204,21,0.8);}
+}
+
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:#0f172a;
+color:#94a3b8;
+position:relative;
+z-index:1;
+}
+
+.footer-icons a{
+margin:0 8px;
+color:#3b82f6;
+text-decoration:none;
+font-size:20px;
+transition:0.3s;
+}
+
+.footer-icons a:hover{
+color:#facc15;
+transform:scale(1.5) rotate(15deg);
+}
+
+@media(max-width:600px){
+#waveHeader{font-size:36px;}
+#subText{font-size:18px;}
+.card{padding:20px;}
+.button{padding:10px 18px;font-size:14px;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+
+<div class="loader" id="loader"><div></div></div>
+
+<header>
+<h1 id="waveHeader">Walkhub Support</h1>
+<p id="subText">Professional Personal Support by Sajib</p>
+</header>
+
+<div class="container">
+
+<div class="card">
+<h2>Register</h2>
+<p>Join Walkhub today! Click below to create your account.</p>
+<a href="https://step.walkhub.uk/#/signUp?share_code=16l3a216518" target="_blank" class="button">Register Now</a>
+</div>
+
+<div class="card">
+<h2>Login</h2>
+<p>Already have an account? Click below to login and access your dashboard.</p>
+<a href="https://step.walkhub.uk/#/home" target="_blank" class="button">Login Now</a>
+</div>
+
+<div class="card">
+<h2>Download App</h2>
+<p>Get Walkhub app on your Android device:</p>
+<a href="https://play.google.com/store/apps/details?id=com.walkhub.app513" target="_blank" class="button">Download App</a>
+</div>
+
+<div class="card">
+<h2>Contact / Support</h2>
+<p>Email: <strong>help@walkhub.uk</strong></p>
+
+<a href="https://chat.whatsapp.com/FXiffhQIJCGFveHTG2PvB0?mode=gi_t" target="_blank" class="button">💬 WhatsApp Group</a>
+
+<a href="https://t.me/walkhubsupport" target="_blank" class="button">📩 Telegram</a>
+
+<a href="https://www.facebook.com/share/1AHmDfBNEM/?mibextid=wwXIfr" target="_blank" class="button">📘 Facebook Page</a>
+
+<a href="https://www.facebook.com/share/g/1BzjrqZLGq/?mibextid=wwXIfr" target="_blank" class="button">👥 Facebook Group</a>
+
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Walkhub Support | Owner: Sajib</p>
+<div class="footer-icons">
+<a href="https://chat.whatsapp.com/FXiffhQIJCGFveHTG2PvB0?mode=gi_t" target="_blank">💬</a>
+<a href="https://t.me/walkhubsupport" target="_blank">📩</a>
+<a href="https://www.facebook.com/share/1AHmDfBNEM/?mibextid=wwXIfr" target="_blank">📘</a>
+<a href="https://www.facebook.com/share/g/1BzjrqZLGq/?mibextid=wwXIfr" target="_blank">👥</a>
+</div>
+</footer>
+
+<!-- ===== LiveChat ===== -->
+<script>
+(function() {
+  var lc = document.createElement('script');
+  lc.async = true;
+  lc.src = 'https://direct.lc.chat/1928eef9-cceb-4cfb-8764-1b3cc5f17058/0';
+  document.body.appendChild(lc);
+})();
+</script>
+
+<script>
+// Loader + card animation
+window.addEventListener('load',()=>{
+document.getElementById('loader').style.display='none';
+document.querySelectorAll('.card').forEach((card,i)=>{
+setTimeout(()=>{card.classList.add('show')},i*250);
+});
+});
+</script>
+
+<script>
+// Particles
+const canvas=document.getElementById("particle-canvas");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const particles=[];
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*3+1,
+dx:(Math.random()-0.5)/1.5,
+dy:(Math.random()-0.5)/1.5,
+color:`hsl(${Math.random()*360},80%,60%)`
+});
+}
+
+function animateParticles(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+for(let i=0;i<particles.length;i++){
+const p=particles[i];
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle=p.color;
+ctx.fill();
+for(let j=i+1;j<particles.length;j++){
+const q=particles[j];
+const dist=Math.hypot(p.x-q.x,p.y-q.y);
+if(dist<120){
+ctx.beginPath();
+ctx.moveTo(p.x,p.y);
+ctx.lineTo(q.x,q.y);
+ctx.strokeStyle=`hsla(200,80%,60%,${1-dist/120})`;
+ctx.lineWidth=1;
+ctx.stroke();
+}
+}
+p.x+=p.dx; p.y+=p.dy;
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+}
+requestAnimationFrame(animateParticles);
+}
+animateParticles();
+
+window.addEventListener("resize",()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
+</script>
+
+</body>
+</html>
